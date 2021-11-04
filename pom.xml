@@ -33,23 +33,36 @@
         </developer>
     </developers>
 
-    <scm>
-        <connection>scm:git:git@github.com:bedatadriven/jackson-datatype-jts.git</connection>
-        <url>scm:git:git@github.com:bedatadriven/jackson-datatype-jts.git</url>
-        <developerConnection>scm:git:git@github.com:bedatadriven/jackson-datatype-jts.git</developerConnection>
-        <tag>jackson-datatype-jts-2.0</tag>
-    </scm>
+<!--    <scm>-->
+<!--        <connection>scm:git:git@github.com:bedatadriven/jackson-datatype-jts.git</connection>-->
+<!--        <url>scm:git:git@github.com:bedatadriven/jackson-datatype-jts.git</url>-->
+<!--        <developerConnection>scm:git:git@github.com:bedatadriven/jackson-datatype-jts.git</developerConnection>-->
+<!--        <tag>jackson-datatype-jts-2.0</tag>-->
+<!--    </scm>-->
+
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <id>sonatype-ossrh</id>-->
+<!--            <name>Sonatype OSSRH</name>-->
+<!--            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
+<!--        </repository>-->
+<!--        <snapshotRepository>-->
+<!--            <id>sonatype-ossrh-snapshots</id>-->
+<!--            <name>Sonatype OSSRH snapshots</name>-->
+<!--            <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--        </snapshotRepository>-->
+<!--    </distributionManagement>-->
 
     <distributionManagement>
         <repository>
-            <id>sonatype-ossrh</id>
-            <name>Sonatype OSSRH</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>nexus.terrestris.de-releases</id>
+            <name>Nexus Release Repository</name>
+            <url>https://nexus.terrestris.de/repository/misc/</url>
         </repository>
         <snapshotRepository>
-            <id>sonatype-ossrh-snapshots</id>
-            <name>Sonatype OSSRH snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>nexus.terrestris.de-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>https://nexus.terrestris.de/repository/misc/</url>
         </snapshotRepository>
     </distributionManagement>
 
