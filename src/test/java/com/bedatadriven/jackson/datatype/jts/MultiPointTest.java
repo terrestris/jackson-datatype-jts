@@ -1,6 +1,7 @@
 package com.bedatadriven.jackson.datatype.jts;
 
 import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.MultiPoint;
 import org.locationtech.jts.geom.Point;
 
@@ -20,7 +21,7 @@ public class MultiPointTest extends BaseJtsModuleTest<MultiPoint> {
 
     @Override
     protected MultiPoint createGeometry() {
-        return gf.createMultiPoint(new Point[]{gf
+        return gf.createMultiPoint(new Point[] {gf
                 .createPoint(new Coordinate(1.2345678, 2.3456789))});
     }
 }

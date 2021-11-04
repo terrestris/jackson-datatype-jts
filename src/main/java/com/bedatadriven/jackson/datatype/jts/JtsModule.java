@@ -12,9 +12,9 @@ public class JtsModule extends SimpleModule {
     public JtsModule() {
         this(new GeometryFactory());
     }
-
+    
     public JtsModule(GeometryFactory geometryFactory) {
-        super("JtsModule", new Version(1, 0, 0, null, "com.bedatadriven", "jackson-datatype-jts"));
+        super("JtsModule", new Version(1, 0, 0, null,"com.bedatadriven","jackson-datatype-jts"));
 
         addSerializer(Geometry.class, new GeometrySerializer());
         GenericGeometryParser genericGeometryParser = new GenericGeometryParser(geometryFactory);

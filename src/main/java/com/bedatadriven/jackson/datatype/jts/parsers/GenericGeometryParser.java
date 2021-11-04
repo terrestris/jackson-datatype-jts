@@ -35,7 +35,8 @@ public class GenericGeometryParser extends BaseParser implements GeometryParser<
         GeometryParser parser = parsers.get(typeName);
         if (parser != null) {
             return parser.geometryFromJson(node);
-        } else {
+        }
+        else {
             throw new JsonMappingException("Invalid geometry type: " + typeName);
         }
     }

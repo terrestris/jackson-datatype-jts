@@ -22,7 +22,7 @@ public class GeometryCollectionParser extends BaseParser implements GeometryPars
 
     private Geometry[] geometriesFromJson(JsonNode arrayOfGeoms) throws JsonMappingException {
         Geometry[] items = new Geometry[arrayOfGeoms.size()];
-        for (int i = 0; i != arrayOfGeoms.size(); ++i) {
+        for(int i=0;i!=arrayOfGeoms.size();++i) {
             items[i] = genericGeometriesParser.geometryFromJson(arrayOfGeoms.get(i));
         }
         return items;

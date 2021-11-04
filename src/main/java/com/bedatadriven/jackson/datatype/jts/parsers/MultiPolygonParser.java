@@ -14,7 +14,6 @@ import static com.bedatadriven.jackson.datatype.jts.GeoJson.COORDINATES;
 public class MultiPolygonParser extends BaseParser implements GeometryParser<MultiPolygon> {
 
     private PolygonParser helperParser;
-
     public MultiPolygonParser(GeometryFactory geometryFactory) {
         super(geometryFactory);
         helperParser = new PolygonParser(geometryFactory);

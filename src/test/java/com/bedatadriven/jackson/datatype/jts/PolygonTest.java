@@ -1,6 +1,7 @@
 package com.bedatadriven.jackson.datatype.jts;
 
 import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.LinearRing;
 import org.locationtech.jts.geom.Polygon;
 
@@ -20,10 +21,10 @@ public class PolygonTest extends BaseJtsModuleTest<Polygon> {
 
     @Override
     protected Polygon createGeometry() {
-        LinearRing shell = gf.createLinearRing(new Coordinate[]{
+        LinearRing shell = gf.createLinearRing(new Coordinate[] {
                 new Coordinate(102.0, 2.0), new Coordinate(103.0, 2.0),
                 new Coordinate(103.0, 3.0), new Coordinate(102.0, 3.0),
-                new Coordinate(102.0, 2.0)});
+                new Coordinate(102.0, 2.0) });
         LinearRing[] holes = new LinearRing[0];
         return gf.createPolygon(shell, holes);
     }
