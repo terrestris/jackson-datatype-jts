@@ -2,10 +2,10 @@ package com.bedatadriven.jackson.datatype.jts;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryFactory;
 import org.junit.Before;
 import org.junit.Test;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
 
 import java.io.IOException;
 
@@ -18,8 +18,8 @@ import static org.junit.Assert.assertThat;
  */
 public abstract class BaseJtsModuleTest<T extends Geometry> {
     protected GeometryFactory gf = new GeometryFactory();
-    private ObjectWriter writer;
     protected ObjectMapper mapper;
+    private ObjectWriter writer;
     private T geometry;
     private String geometryAsGeoJson;
 
@@ -65,7 +65,7 @@ public abstract class BaseJtsModuleTest<T extends Geometry> {
     protected void assertRoundTrip(T geom) throws IOException {
         String json = writer.writeValueAsString(geom);
         System.out.println(json);
-        Geometry regeom = mapper.reader(Geometry.class).readValue(json);
+        Geometry regeom = mapper.readerFor(Geometry.class).readValue(json);
         assertThat(geom.equalsExact(regeom), is(true));
     }
 }
