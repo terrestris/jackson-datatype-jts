@@ -4,7 +4,7 @@
 
   <groupId>de.terrestris.jackson</groupId>
   <artifactId>jackson-datatype-jts</artifactId>
-  <version>2.13.2.2</version>
+  <version>2.15.3</version>
   <name>Jackson-datatype-jts</name>
 
   <description>Add-on module for Jackson (http://jackson.codehaus.org) to support JTS geometry types using
@@ -56,12 +56,12 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.13.2.2</version>
+      <version>2.15.3</version>
     </dependency>
     <dependency>
       <groupId>org.locationtech.jts</groupId>
       <artifactId>jts-core</artifactId>
-      <version>1.18.2</version>
+      <version>1.19.0</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -72,7 +72,7 @@
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
-      <version>3.2</version>
+      <version>5.2.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
