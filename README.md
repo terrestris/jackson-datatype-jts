@@ -72,3 +72,7 @@ You can also read GeoJSON in as JTS geometry objects:
 InputStream in;
 Point point = mapper.readValue(in, Point.class);
 ```
+
+# Dev / Release notes:
+* Java 11 required
+* publish to nexus via `mvn clean package install deploy`
