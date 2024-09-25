@@ -4,7 +4,7 @@
 
   <groupId>de.terrestris.jackson</groupId>
   <artifactId>jackson-datatype-jts</artifactId>
-  <version>2.15.3</version>
+  <version>2.17.2</version>
   <name>Jackson-datatype-jts</name>
 
   <description>Add-on module for Jackson (http://jackson.codehaus.org) to support JTS geometry types using
@@ -48,31 +48,35 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <jackson.version>2.17.2</jackson.version>
+    <jts.version>1.20.0</jts.version>
+    <junit.version>4.13.2</junit.version>
+    <easymock.version>5.2.0</easymock.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.15.3</version>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>org.locationtech.jts</groupId>
       <artifactId>jts-core</artifactId>
-      <version>1.19.0</version>
+      <version>${jts.version}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13.2</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
-      <version>5.2.0</version>
+      <version>${easymock.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -108,7 +112,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.3</version>
+        <version>0.8.12</version>
         <executions>
           <execution>
             <id>default-prepare-agent</id>
