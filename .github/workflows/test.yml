@@ -1,0 +1,32 @@
+name: Test terrestris version of jackson-datatype-jts
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  mvn-test:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout sources
+      uses: actions/checkout@v4
+
+    - name: Set up Java 17
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '17'
+        architecture: x64
+
+    - name: Handle caching of maven repository
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+
+    - name: Test jackson-datatype-jts with maven
+      run: mvn -B test
