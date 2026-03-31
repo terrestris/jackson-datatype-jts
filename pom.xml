@@ -4,7 +4,7 @@
 
   <groupId>de.terrestris.jackson</groupId>
   <artifactId>jackson-datatype-jts</artifactId>
-  <version>2.17.2</version>
+  <version>3.1.1</version>
   <name>Jackson-datatype-jts</name>
 
   <description>Add-on module for Jackson (http://jackson.codehaus.org) to support JTS geometry types using
@@ -50,16 +50,22 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <jackson.version>2.17.2</jackson.version>
+    <jackson.version>3.1.1</jackson.version>
     <jts.version>1.20.0</jts.version>
     <junit.version>4.13.2</junit.version>
     <easymock.version>5.2.0</easymock.version>
+    <jackson-annotations.version>2.21</jackson-annotations.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
+      <groupId>tools.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>tools.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
       <version>${jackson.version}</version>
     </dependency>
     <dependency>
@@ -78,6 +84,12 @@
       <artifactId>easymock</artifactId>
       <version>${easymock.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>${jackson-annotations.version}</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 
