@@ -1,17 +1,18 @@
 package com.bedatadriven.jackson.datatype.jts;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import org.junit.Before;
 import org.junit.Test;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectWriter;
+import tools.jackson.databind.json.JsonMapper;
 
 import java.io.IOException;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
 
 /**
  * Created by mihaildoronin on 11/11/15.
@@ -28,8 +29,7 @@ public abstract class BaseJtsModuleTest<T extends Geometry> {
 
     @Before
     public void setup() {
-        mapper = new ObjectMapper();
-        mapper.registerModule(new JtsModule());
+        mapper = JsonMapper.builder().addModule(new JtsModule()).build();
         writer = mapper.writer();
         geometry = createGeometry();
         geometryAsGeoJson = createGeometryAsGeoJson();

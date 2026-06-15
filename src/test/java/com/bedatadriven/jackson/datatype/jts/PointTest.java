@@ -23,15 +23,14 @@ public class PointTest extends BaseJtsModuleTest<Point> {
     protected Point createGeometry() {
         return gf.createPoint(new Coordinate(1.2345678, 2.3456789));
     }
-    
+
     /**
      * Expectation that a malformed json tree node will perform an assertion of not null rather
      * than an unexpected {@link NullPointerException} being thrown.
-     * @throws Exception
      */
     @Test(expected = AssertionError.class)
-    public void shouldThrowDeserializeConcreteType() throws Exception {
-    	
+    public void shouldThrowDeserializeConcreteType() {
+
         // This malformed value has a typo of: 'cordinates'
         String malformedSerializedPoint = "{\"type\":\"Point\",\"cordinates\":[1.2345678,2.3456789]}";
         this.mapper.readValue(malformedSerializedPoint, getType());

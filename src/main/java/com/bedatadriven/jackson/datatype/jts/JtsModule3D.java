@@ -3,16 +3,16 @@ package com.bedatadriven.jackson.datatype.jts;
 import com.bedatadriven.jackson.datatype.jts.parsers.*;
 import com.bedatadriven.jackson.datatype.jts.serialization.GeometryDeserializer;
 import com.bedatadriven.jackson.datatype.jts.serialization.GeometrySerializer;
-import com.fasterxml.jackson.core.Version;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.locationtech.jts.geom.*;
+import tools.jackson.core.Version;
+import tools.jackson.databind.module.SimpleModule;
 
 public class JtsModule3D extends SimpleModule {
 
     public JtsModule3D() {
         this(new GeometryFactory());
     }
-    
+
     public JtsModule3D(GeometryFactory geometryFactory) {
         super("JtsModule3D", new Version(1, 0, 0, null,"com.bedatadriven","jackson-datatype-jts"));
 

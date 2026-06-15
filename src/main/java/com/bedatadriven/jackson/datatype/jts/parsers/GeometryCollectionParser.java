@@ -1,10 +1,9 @@
 package com.bedatadriven.jackson.datatype.jts.parsers;
 
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryCollection;
 import org.locationtech.jts.geom.GeometryFactory;
+import tools.jackson.databind.JsonNode;
 
 import static com.bedatadriven.jackson.datatype.jts.GeoJson.GEOMETRIES;
 
@@ -20,7 +19,7 @@ public class GeometryCollectionParser extends BaseParser implements GeometryPars
         this.genericGeometriesParser = genericGeometriesParser;
     }
 
-    private Geometry[] geometriesFromJson(JsonNode arrayOfGeoms) throws JsonMappingException {
+    private Geometry[] geometriesFromJson(JsonNode arrayOfGeoms) {
         Geometry[] items = new Geometry[arrayOfGeoms.size()];
         for(int i=0;i!=arrayOfGeoms.size();++i) {
             items[i] = genericGeometriesParser.geometryFromJson(arrayOfGeoms.get(i));
@@ -29,7 +28,7 @@ public class GeometryCollectionParser extends BaseParser implements GeometryPars
     }
 
     @Override
-    public GeometryCollection geometryFromJson(JsonNode node) throws JsonMappingException {
+    public GeometryCollection geometryFromJson(JsonNode node) {
         return geometryFactory.createGeometryCollection(
                 geometriesFromJson(node.get(GEOMETRIES)));
     }

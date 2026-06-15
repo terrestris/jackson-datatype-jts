@@ -1,9 +1,9 @@
 package com.bedatadriven.jackson.datatype.jts.parsers;
 
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.JsonNode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,14 +30,14 @@ public class GenericGeometryParser extends BaseParser implements GeometryParser<
     }
 
     @Override
-    public Geometry geometryFromJson(JsonNode node) throws JsonMappingException {
-        String typeName = node.get(TYPE).asText();
+    public Geometry geometryFromJson(JsonNode node) throws JacksonException {
+        String typeName = node.get(TYPE).asString();
         GeometryParser parser = parsers.get(typeName);
         if (parser != null) {
             return parser.geometryFromJson(node);
         }
         else {
-            throw new JsonMappingException("Invalid geometry type: " + typeName);
+            throw new JacksonGeometryException("Invalid geometry type: " + typeName);
         }
     }
 }

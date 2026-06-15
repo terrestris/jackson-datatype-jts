@@ -1,10 +1,9 @@
 package com.bedatadriven.jackson.datatype.jts.parsers;
 
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.MultiPolygon;
 import org.locationtech.jts.geom.Polygon;
+import tools.jackson.databind.JsonNode;
 
 import static com.bedatadriven.jackson.datatype.jts.GeoJson.COORDINATES;
 
@@ -33,7 +32,7 @@ public class MultiPolygonParser extends BaseParser implements GeometryParser<Mul
     }
 
     @Override
-    public MultiPolygon geometryFromJson(JsonNode node) throws JsonMappingException {
+    public MultiPolygon geometryFromJson(JsonNode node) {
         return multiPolygonFromJson(node);
     }
 }
